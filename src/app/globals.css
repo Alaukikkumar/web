@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+/* ───────────────────────── Design tokens ───────────────────────── */
+@theme {
+  --color-bg: #08090a;
+  --color-surface: #0e1012;
+  --color-surface-2: #14171a;
+  --color-surface-3: #1b1f23;
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+  --color-fg: #efefeb;
+  --color-muted: #9ba1a8;
+  --color-dim: #7d848b;
+  /* The single industrial accent — used for status, data, lines and actions. */
+  --color-accent: #3ee08f;
+  --color-accent-ink: #04140b;
+  --color-accent-hover: #6cf0ad;
+  /* Reserved for alarm / error states. */
+  --color-alarm: #ffb020;
+  /* Blueprint grid lines and subtle hover fills. */
+  --color-grid: rgb(255 255 255 / 0.045);
+  --color-hover: rgb(255 255 255 / 0.04);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --breakpoint-3xl: 1600px;
+}
+
+/* ───────────────────────── Themes ─────────────────────────
+   Dark is the default (declared in @theme above). Light overrides the same tokens.
+   .force-dark restores the dark palette inside a subtree — used for SCADA/HMI "screens",
+   which stay dark in both themes like real control-room displays. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f3f3ef;
+  --color-surface: #fafaf7;
+  --color-surface-2: #e8e8e3;
+  --color-surface-3: #dcdcd6;
+  --color-line: rgb(13 15 17 / 0.11);
+  --color-line-strong: rgb(13 15 17 / 0.22);
+  --color-fg: #0d0f11;
+  --color-muted: #4a5056;
+  --color-dim: #62686f;
+  --color-accent: #087a43;
+  --color-accent-ink: #ffffff;
+  --color-accent-hover: #06633a;
+  --color-alarm: #b45309;
+  --color-grid: rgb(13 15 17 / 0.055);
+  --color-hover: rgb(13 15 17 / 0.04);
+}
+
+.force-dark {
+  color-scheme: dark;
+  --color-bg: #08090a;
+  --color-surface: #0e1012;
+  --color-surface-2: #14171a;
+  --color-surface-3: #1b1f23;
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+  --color-fg: #efefeb;
+  --color-muted: #9ba1a8;
+  --color-dim: #7d848b;
+  --color-accent: #3ee08f;
+  --color-accent-ink: #04140b;
+  --color-accent-hover: #6cf0ad;
+  --color-alarm: #ffb020;
+  --color-grid: rgb(255 255 255 / 0.045);
+  --color-hover: rgb(255 255 255 / 0.04);
+  color: var(--color-fg);
+}
+
+/* Theme toggle shows the icon for the theme you would switch to. */
+.theme-icon-sun { display: block; }
+.theme-icon-moon { display: none; }
+:root[data-theme="light"] .theme-icon-sun { display: none; }
+:root[data-theme="light"] .theme-icon-moon { display: block; }
+
+/* Smooth cross-fade when switching themes (View Transitions API, where supported). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  button:not(:disabled),
+  [role="button"],
+  [role="tab"],
+  [role="slider"] {
+    cursor: pointer;
+  }
+}
+
+/* ───────────────────────── Components ───────────────────────── */
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .container-x { padding-inline: 2rem; }
+  }
+  @media (min-width: 1024px) {
+    .container-x { padding-inline: 3rem; }
+  }
+
+  /* Technical micro label */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-dim);
+  }
+
+  .display {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+
+  /* Blueprint grid */
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .grid-fade {
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+  }
+
+  .panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+  }
+
+  .corner-marks {
+    position: relative;
+  }
+  .corner-marks::before,
+  .corner-marks::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--color-line-strong);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .corner-marks::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+  .corner-marks::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-height: 3rem;
+    padding: 0 1.375rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s, transform 0.25s var(--ease-out-expo);
+    white-space: nowrap;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+  .btn-primary:hover { background: var(--color-accent-hover); }
+  .btn-ghost {
+    border-color: var(--color-line-strong);
+    color: var(--color-fg);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-fg);
+    background: var(--color-hover);
+  }
+  .btn .btn-arrow { transition: transform 0.3s var(--ease-out-expo); }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    border: 1px solid var(--color-line);
+    background: color-mix(in srgb, var(--color-fg) 2%, transparent);
+  }
+
+  .status-dot {
+    position: relative;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--color-accent);
+    flex: none;
+  }
+  .status-dot::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    border: 1px solid var(--color-accent);
+    opacity: 0;
+    animation: ping 2.4s var(--ease-out-expo) infinite;
+  }
+
+  .code-block {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--color-muted);
+    tab-size: 2;
+  }
+}
+
+/* ───────────────────────── Motion ───────────────────────── */
+@keyframes ping {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  80%, 100% { transform: scale(1.8); opacity: 0; }
+}
+@keyframes blink {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0.25; }
+}
+/* Container query units: the packet travels the full length of its track without the track itself moving. */
+@keyframes travel-x {
+  0% { transform: translateX(0); opacity: 0; }
+  8% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateX(100cqw); opacity: 0; }
+}
+@keyframes travel-y {
+  0% { transform: translateY(0); opacity: 0; }
+  8% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateY(100cqh); opacity: 0; }
+}
+@keyframes dash {
+  to { stroke-dashoffset: -40; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes row-hit {
+  0%, 2% { background-color: color-mix(in srgb, var(--color-accent) 10%, transparent); border-color: color-mix(in srgb, var(--color-accent) 55%, transparent); }
+  14%, 100% { background-color: transparent; border-color: var(--color-line); }
+}
+@keyframes text-hit {
+  0%, 2% { color: var(--color-accent); }
+  14%, 100% { color: var(--color-fg); }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+/* Starts partially visible so the first paint (and LCP) is never delayed. */
+@keyframes page-in {
+  from { opacity: 0.35; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes scroll-rows {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@keyframes hoist {
+  0%, 8% { transform: translateX(0); }
+  28%, 46% { transform: translateX(300px); }
+  62%, 74% { transform: translateX(500px); }
+  96%, 100% { transform: translateX(0); }
+}
+@keyframes level {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.94); }
+}
+
+.anim-blink { animation: blink 1.6s steps(1, end) infinite; }
+.anim-dash { stroke-dasharray: 4 6; animation: dash 1.6s linear infinite; }
+.anim-spin { animation: spin 2.2s linear infinite; transform-box: fill-box; transform-origin: center; }
+.anim-rise { animation: rise-in 0.7s var(--ease-out-expo) both; }
+.page-enter { animation: page-in 0.45s var(--ease-out-expo) both; }
+
+/* Packet that travels along a connector. The track spans the connector and acts as a size container. */
+.packet-track-x,
+.packet-track-y {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.packet-track-x { container-type: inline-size; }
+.packet-track-y { container-type: size; }
+.packet-track-x .packet { animation: travel-x var(--dur, 2.8s) linear var(--delay, 0s) infinite; }
+.packet-track-y .packet { animation: travel-y var(--dur, 2.8s) linear var(--delay, 0s) infinite; }
+.packet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+.packet-track-x .packet { top: 50%; left: 0; margin: -3px 0 0 -3px; }
+.packet-track-y .packet { left: 50%; top: 0; margin: -3px 0 0 -3px; }
+
+/* Pause continuous animations for regions that are off-screen (toggled by MotionController). */
+[data-inview="false"] *,
+[data-inview="false"]::before,
+[data-inview="false"]::after {
+  animation-play-state: paused !important;
+}
+
+/* Scroll reveal — content is only hidden when scripting is enabled, so it is never lost without JS. */
+@media (scripting: enabled) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    transition:
+      opacity 0.9s var(--ease-out-expo),
+      transform 0.9s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-reveal="scale"] { transform: scale(0.97); }
+  [data-reveal="left"] { transform: translate3d(-24px, 0, 0); }
+  [data-reveal][data-visible] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  .packet-track-x,
+  .packet-track-y,
+  .motion-only { display: none !important; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+@media print {
+  html, body { background: #fff; color: #000; }
+  .no-print { display: none !important; }
+}

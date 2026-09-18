@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+      <rect x="7" y="3" width="34" height="42" fill="none" stroke="#efefeb" stroke-width="3"/>
+      <path d="M7 12H41" stroke="#efefeb" stroke-width="2.5"/>
+      <rect x="32" y="6" width="5" height="3.5" fill="#3ee08f"/>
+      <text x="24" y="33" text-anchor="middle" font-family="Geist, sans-serif" font-weight="700" font-size="15" fill="#efefeb">AK</text>
+      <path d="M13 40H17M20.5 40H24.5M28 40H32" stroke="#efefeb" stroke-opacity=".5" stroke-width="2.5"/></svg>

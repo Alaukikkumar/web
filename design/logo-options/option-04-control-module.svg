@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="240" viewBox="0 0 720 240">
+  <style>@import url('https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=block');</style>
+  <rect width="720" height="240" fill="#08090a"/>
+  <g transform="translate(64 72) scale(2)">
+      <rect x="7" y="3" width="34" height="42" fill="none" stroke="#efefeb" stroke-width="3"/>
+      <path d="M7 12H41" stroke="#efefeb" stroke-width="2.5"/>
+      <rect x="32" y="6" width="5" height="3.5" fill="#3ee08f"/>
+      <text x="24" y="33" text-anchor="middle" font-family="Geist, sans-serif" font-weight="700" font-size="15" fill="#efefeb">AK</text>
+      <path d="M13 40H17M20.5 40H24.5M28 40H32" stroke="#efefeb" stroke-opacity=".5" stroke-width="2.5"/></g>
+  <text x="188" y="126" font-family="Geist, sans-serif" font-weight="700" font-size="58" letter-spacing="-0.02em" fill="#efefeb">ALAUKIK</text>
+  <text x="190" y="162" font-family="JetBrains Mono, monospace" font-size="15" letter-spacing="0.2em" fill="#7d848b">AUTOMATION ENGINEER</text>
+</svg>
