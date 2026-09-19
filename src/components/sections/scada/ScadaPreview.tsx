@@ -98,7 +98,7 @@ export function ScadaPreview() {
   ];
 
   return (
-    <section aria-labelledby="scada-title" className="force-dark relative border-t border-line bg-[#050606] py-24 md:py-32 lg:py-36">
+    <section aria-labelledby="scada-title" className="relative border-t border-line bg-bg-deep py-24 md:py-32 lg:py-36">
       <div className="container-x">
         <SectionHeading
           id="scada-title"

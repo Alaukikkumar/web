@@ -65,7 +65,7 @@ export function HeroSystem() {
   return (
     <div
       ref={ref}
-      className="force-dark panel corner-marks relative w-full overflow-hidden"
+      className="panel corner-marks relative w-full overflow-hidden"
       data-live=""
       role="img"
       aria-label="Animated concept diagram: field devices to PLC, industrial network, SCADA / HMI, database, reporting and SMS / Telegram / email notifications. Demo values."

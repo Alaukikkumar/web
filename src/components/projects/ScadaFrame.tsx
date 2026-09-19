@@ -14,7 +14,7 @@ interface ScadaFrameProps {
 /** Window chrome shared by all SCADA-style demo visuals. */
 export function ScadaFrame({ screen, status, badge = "Demo system", children, className, footer }: ScadaFrameProps) {
   return (
-    <div className={cn("force-dark panel corner-marks flex h-full flex-col overflow-hidden", className)}>
+    <div className={cn("panel corner-marks flex h-full flex-col overflow-hidden", className)}>
       <div className="flex items-center justify-between gap-3 border-b border-line bg-surface-2 px-3 py-2.5 sm:px-4">
         <span className="label truncate text-muted">{screen}</span>
         <span className="label hidden items-center gap-2 text-accent sm:flex">
