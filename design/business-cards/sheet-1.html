@@ -1,0 +1,173 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=block');
+  *{box-sizing:border-box;margin:0;padding:0}
+  .card{position:relative;width:1050px;height:600px;overflow:hidden;font-family:Geist,sans-serif}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(to right,var(--g) 1px,transparent 1px),linear-gradient(to bottom,var(--g) 1px,transparent 1px);background-size:50px 50px}
+  .marks::before,.marks::after{content:"";position:absolute;width:40px;height:40px;border:2px solid var(--m)}
+  .marks::before{left:36px;top:36px;border-width:2px 0 0 2px}
+  .marks::after{right:36px;bottom:36px;border-width:0 2px 2px 0}
+  .dline{position:relative;display:flex;align-items:center;justify-content:space-between;font-size:24px;letter-spacing:.14em;text-transform:uppercase}
+  .dline b{width:14px;height:14px;border:3px solid;background:inherit;position:relative;z-index:1}
+  .dline span:not(.dl-track){position:relative;z-index:1;margin:0 18px 0 12px;background:#08090a;padding-right:6px}
+  .dline span:last-child{margin-right:0}
+  .dl-track{position:absolute;left:0;right:0;top:50%;height:2px}
+  .dl-track i{position:absolute;left:42%;top:-6px;width:14px;height:14px;border-radius:8px}
+  .contacts{position:absolute;display:grid;gap:10px}
+  .crow{display:grid;grid-template-columns:52px auto;font-size:28px;letter-spacing:.04em}
+  .frame{position:absolute;inset:40px;border:3px solid var(--f)}
+  .frame::after{content:"";position:absolute;inset:10px;border:1px solid var(--f);opacity:.5}
+  .zone{position:absolute;font-size:20px;color:#6b7178}
+  .tblock{position:absolute;border-collapse:collapse;font-size:24px;letter-spacing:.1em;text-transform:uppercase}
+  .tblock td{border:2px solid var(--t);padding:12px 18px}
+  .tblock td.k{width:1%;white-space:nowrap;color:#6b7178}
+  .plate{position:absolute;border:2px solid}
+  .pbar{display:flex;justify-content:space-between;align-items:center;padding:18px 32px;border-bottom:2px solid;font-size:26px;letter-spacing:.16em}
+  .kv div{display:grid;grid-template-columns:120px auto;font-size:27px;letter-spacing:.04em;margin-top:10px}
+  .tags{width:calc(100% - 80px);margin:26px 40px 0;border-collapse:collapse;font-size:28px;letter-spacing:.04em}
+  .tags td{padding:13px 0;border-bottom:2px solid var(--l)}
+  .tags td:last-child{text-align:right}
+  .rivet{position:absolute;width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f4f5f2,#8d9291 70%);box-shadow:0 1px 0 #fff}
+  .fields{margin:30px 58px 0;display:grid;gap:14px;color:#1b1f23}
+  .fields div{display:grid;grid-template-columns:210px auto;font-size:28px;letter-spacing:.03em;border-bottom:2px solid #9ea3a2;padding-bottom:10px}
+  .fields span{font-size:22px;letter-spacing:.16em;color:#5b6166;align-self:center}
+  .fields em{font-style:normal}
+
+  body{background:#1b1d20;color:#efefeb;font-family:Geist,sans-serif;padding:56px;width:1300px}
+  h1{font-size:40px;font-weight:600;letter-spacing:-.02em;text-transform:uppercase}
+  .intro{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:24px;margin-bottom:34px}
+  .intro p{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.14em;color:#9ba1a8;text-transform:uppercase}
+  .row{margin-bottom:40px}
+  .row h2{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:16px;margin-bottom:14px}
+  .row h2 b{color:#3ee08f;font-weight:500} .row h2 span{color:#9ba1a8}
+  .pair{display:flex;gap:28px}
+  .face{zoom:.56;outline:2px solid rgba(255,255,255,.14);box-shadow:0 20px 50px rgba(0,0,0,.45)}
+  .lab{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;color:#7d848b;margin-top:10px;text-transform:uppercase}
+</style></head><body><div class="intro"><h1>ALAUKIK — business cards (1/2)</h1><p>3.5 × 2 in · 300 dpi · placeholder contact details</p></div>
+    <section class="row">
+      <h2><b>Card 01</b>Control Room<span>· Dark · logo 01 Signal Node · signature data line</span></h2>
+      <div class="pair">
+        <div><div class="face">
+      <div class="card" style="background:#08090a;color:#efefeb">
+        <div class="grid" style="--g:rgba(255,255,255,.05)"></div>
+        <div class="marks" style="--m:rgba(255,255,255,.12)"></div>
+        <div style="position:absolute;left:84px;top:170px;display:flex;align-items:center;gap:36px">
+          <svg xmlns="http://www.w3.org/2000/svg" width="132" height="132" viewBox="0 0 48 48">
+      <rect x="4" y="4" width="16" height="16" fill="none" stroke="#efefeb" stroke-width="3"/>
+      <path d="M20 12H36V28" fill="none" stroke="#efefeb" stroke-width="3"/>
+      <rect x="28" y="28" width="16" height="16" fill="#3ee08f"/>
+      <path d="M4 38H20" stroke="#efefeb" stroke-opacity=".45" stroke-width="3"/></svg>
+          <div>
+            <div style="font-size:104px;font-weight:600;letter-spacing:-.035em;line-height:1">ALAUKIK</div>
+            <div class="mono" style="font-size:27px;letter-spacing:.24em;color:#7d848b;margin-top:16px">AUTOMATION ENGINEER</div>
+          </div>
+        </div>
+        <div style="position:absolute;left:84px;right:84px;bottom:78px">
+  <div class="dline mono" style="color:#7d848b">
+    <span class="dl-track" style="background:rgba(255,255,255,.18)"><i style="background:#3ee08f"></i></span>
+    <b style="border-color:#3ee08f"></b><span>Sensor</span><b style="border-color:#3ee08f"></b><span>PLC</span><b style="border-color:#3ee08f"></b><span>SCADA</span><b style="border-color:#3ee08f"></b><span>Database</span><b style="border-color:#3ee08f"></b><span>Report</span>
+  </div></div>
+      </div></div><div class="lab">Front</div></div>
+        <div><div class="face">
+      <div class="card" style="background:#08090a;color:#efefeb">
+        <div class="grid" style="--g:rgba(255,255,255,.04)"></div>
+        <div class="marks" style="--m:rgba(255,255,255,.12)"></div>
+        <div style="position:absolute;left:84px;top:80px">
+          <div style="font-size:66px;font-weight:600;letter-spacing:-.03em;line-height:1">Alaukik Kumar</div>
+          <div class="mono" style="font-size:27px;letter-spacing:.14em;color:#3ee08f;margin-top:18px;text-transform:uppercase">Industrial Automation Engineer</div>
+          <div class="mono" style="font-size:26px;letter-spacing:.08em;color:#9ba1a8;margin-top:10px">SCADA · PLC · EMS · Industrial Data</div>
+        </div>
+        <div class="contacts" style="left:84px;bottom:76px"><div class="crow"><span class="mono" style="color:#3ee08f">T</span><span class="mono" style="color:#efefeb">+91 00000 00000</span></div><div class="crow"><span class="mono" style="color:#3ee08f">E</span><span class="mono" style="color:#efefeb">you@example.com</span></div><div class="crow"><span class="mono" style="color:#3ee08f">W</span><span class="mono" style="color:#efefeb">yourportfolio.com</span></div><div class="crow"><span class="mono" style="color:#3ee08f">IN</span><span class="mono" style="color:#efefeb">linkedin.com/in/your-profile</span></div></div>
+        <div class="mono" style="position:absolute;right:84px;top:92px;font-size:24px;letter-spacing:.14em;color:#7d848b;display:flex;align-items:center;gap:14px">
+          <span style="width:14px;height:14px;border-radius:9px;background:#3ee08f"></span>AVAILABLE FOR PROJECTS
+        </div>
+      </div></div><div class="lab">Back</div></div>
+      </div>
+    </section>
+    <section class="row">
+      <h2><b>Card 02</b>Blueprint<span>· Light paper · logo 03 Instrument Tag · engineering drawing title block</span></h2>
+      <div class="pair">
+        <div><div class="face">
+      <div class="card" style="background:#f4f3ee;color:#0d0f11">
+        <div class="grid" style="--g:rgba(13,15,17,.05)"></div>
+        <div class="frame" style="--f:#0d0f11"></div>
+        <span class="mono zone" style="left:150px;top:16px">1</span><span class="mono zone" style="left:400px;top:16px">2</span><span class="mono zone" style="left:650px;top:16px">3</span><span class="mono zone" style="left:900px;top:16px">4</span>
+        <span class="mono zone" style="left:18px;top:190px">A</span><span class="mono zone" style="left:18px;top:410px">B</span>
+        <div style="position:absolute;left:96px;top:96px"><svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="20.5" fill="none" stroke="#0d0f11" stroke-width="3"/>
+      <path d="M3.5 24H44.5" stroke="#0d0f11" stroke-width="2.5"/>
+      <text x="24" y="19.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="12" fill="#0d0f11">AK</text>
+      <text x="24" y="37" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="9.5" fill="#0b8a4c">01</text></svg></div>
+        <div style="position:absolute;left:300px;top:150px;width:170px;border-top:2px solid #0d0f11"></div>
+        <div class="mono" style="position:absolute;left:484px;top:128px;font-size:26px;letter-spacing:.1em;color:#4a5056;line-height:1.5">TAG AK-01<br/>FIELD → PLC → SCADA</div>
+        <table class="tblock mono" style="--t:#0d0f11;right:62px;bottom:62px;width:620px">
+          <tr><td colspan="3" style="font-family:Geist,sans-serif;font-size:50px;font-weight:600;letter-spacing:-.02em;text-transform:none;color:#0d0f11">Alaukik Kumar</td></tr>
+          <tr><td colspan="3" style="color:#0b8a4c">Industrial Automation Engineer</td></tr>
+          <tr><td>DWG AK-001</td><td>REV 01</td><td>SHEET 1/1</td></tr>
+        </table>
+      </div></div><div class="lab">Front</div></div>
+        <div><div class="face">
+      <div class="card" style="background:#f4f3ee;color:#0d0f11">
+        <div class="grid" style="--g:rgba(13,15,17,.05)"></div>
+        <div class="frame" style="--f:#0d0f11"></div>
+        <div style="position:absolute;left:92px;top:92px;display:flex;align-items:center;gap:22px">
+          <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="20.5" fill="none" stroke="#0d0f11" stroke-width="3"/>
+      <path d="M3.5 24H44.5" stroke="#0d0f11" stroke-width="2.5"/>
+      <text x="24" y="19.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="12" fill="#0d0f11">AK</text>
+      <text x="24" y="37" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="9.5" fill="#0b8a4c">01</text></svg>
+          <div>
+            <div style="font-size:48px;font-weight:600;letter-spacing:-.02em;line-height:1">ALAUKIK</div>
+            <div class="mono" style="font-size:24px;letter-spacing:.16em;color:#4a5056;margin-top:8px">SCADA · PLC · EMS · INDUSTRIAL DATA</div>
+          </div>
+        </div>
+        <table class="tblock mono" style="--t:#0d0f11;left:92px;bottom:78px;width:866px">
+          <tr><td class="k">TEL</td><td>+91 00000 00000</td><td class="k">BASE</td><td>INDIA</td></tr>
+          <tr><td class="k">EMAIL</td><td colspan="3" style="text-transform:none">you@example.com</td></tr>
+          <tr><td class="k">WEB</td><td colspan="3" style="text-transform:none">yourportfolio.com</td></tr>
+          <tr><td class="k">LINKEDIN</td><td colspan="3" style="text-transform:none">linkedin.com/in/your-profile</td></tr>
+        </table>
+      </div></div><div class="lab">Back</div></div>
+      </div>
+    </section>
+    <section class="row">
+      <h2><b>Card 03</b>HMI Faceplate<span>· Dark · logo 05 Digital Pulse · SCADA faceplate with live trend</span></h2>
+      <div class="pair">
+        <div><div class="face">
+      <div class="card" style="background:#050606;color:#efefeb">
+        <div class="plate" style="left:56px;top:56px;right:56px;bottom:56px;background:#0e1012;border-color:rgba(255,255,255,.12)">
+          <div class="pbar mono" style="background:#14171a;border-color:rgba(255,255,255,.12)">
+            <span style="color:#9ba1a8">FACEPLATE · ENG-01</span>
+            <span style="color:#3ee08f;display:flex;align-items:center;gap:12px"><i style="width:14px;height:14px;background:#3ee08f"></i>RUNNING</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:30px;padding:34px 40px 0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 48 48">
+      <rect x="3" y="3" width="42" height="42" fill="none" stroke="#efefeb" stroke-width="3"/>
+      <path d="M8 33H17V15H31V33H40" fill="none" stroke="#3ee08f" stroke-width="3.5"/></svg>
+            <div style="font-size:64px;font-weight:600;letter-spacing:-.03em;line-height:1">Alaukik Kumar</div>
+          </div>
+          <div class="mono kv" style="padding:24px 40px 0;color:#efefeb">
+            <div><span style="color:#7d848b">ROLE</span>Industrial Automation Engineer</div>
+            <div><span style="color:#7d848b">SPEC</span>SCADA · PLC · EMS · Industrial Data</div>
+            <div><span style="color:#7d848b">BASE</span>India</div>
+          </div>
+          <svg viewBox="0 0 900 70" preserveAspectRatio="none" style="position:absolute;left:40px;right:40px;bottom:24px;width:calc(100% - 80px);height:62px">
+            <polyline points="0,50 60,44 120,48 180,30 240,34 300,20 360,28 420,16 480,24 540,12 600,22 660,14 720,26 780,18 840,22 900,10" fill="none" stroke="#3ee08f" stroke-width="3"/>
+          </svg>
+        </div>
+      </div></div><div class="lab">Front</div></div>
+        <div><div class="face">
+      <div class="card" style="background:#050606;color:#efefeb">
+        <div class="plate" style="left:56px;top:56px;right:56px;bottom:56px;background:#0e1012;border-color:rgba(255,255,255,.12)">
+          <div class="pbar mono" style="background:#14171a;border-color:rgba(255,255,255,.12)">
+            <span style="color:#9ba1a8">CONTACT · TAG LIST</span>
+            <span style="color:#7d848b">ALAUKIK</span>
+          </div>
+          <table class="tags mono" style="--l:rgba(255,255,255,.12)">
+            <tr style="color:#7d848b"><td>TAG</td><td>VALUE</td><td>Q</td></tr>
+            <tr><td style="color:#9ba1a8">PHONE</td><td style="color:#efefeb;text-transform:none">+91 00000 00000</td><td style="color:#3ee08f">GOOD</td></tr><tr><td style="color:#9ba1a8">EMAIL</td><td style="color:#efefeb;text-transform:none">you@example.com</td><td style="color:#3ee08f">GOOD</td></tr><tr><td style="color:#9ba1a8">WEB</td><td style="color:#efefeb;text-transform:none">yourportfolio.com</td><td style="color:#3ee08f">GOOD</td></tr><tr><td style="color:#9ba1a8">LINKEDIN</td><td style="color:#efefeb;text-transform:none">linkedin.com/in/your-profile</td><td style="color:#3ee08f">GOOD</td></tr>
+          </table>
+        </div>
+      </div></div><div class="lab">Back</div></div>
+      </div>
+    </section></body></html>
