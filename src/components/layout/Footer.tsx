@@ -14,11 +14,11 @@ export function Footer() {
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-3 text-fg">
-              <LogoMark />
-              <span className="font-mono text-sm font-semibold uppercase tracking-[0.14em]">{site.brand}</span>
+            <div className="flex items-center gap-4 text-fg">
+              <LogoMark size={40} />
+              <span className="text-3xl font-semibold uppercase tracking-[-0.025em]">{site.brand}</span>
             </div>
-            <p className="text-2xl font-semibold uppercase tracking-[-0.02em] text-fg">{site.role}</p>
+            <p className="font-mono text-xs uppercase tracking-[0.24em] text-dim">{site.role}</p>
             <p className="label text-muted">SCADA • PLC • EMS • IIoT</p>
           </div>
 

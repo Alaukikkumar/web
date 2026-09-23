@@ -27,8 +27,15 @@ export default function OpenGraphImage() {
           fontFamily: "monospace",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 22, letterSpacing: 3, color: "#9ba1a8" }}>
-          <div style={{ width: 14, height: 14, background: "#3ee08f" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 20, fontSize: 22, letterSpacing: 3, color: "#9ba1a8" }}>
+          {/* Signal Node mark — same geometry as the site logo and business card */}
+          <div style={{ position: "relative", display: "flex", width: 40, height: 40 }}>
+            <div style={{ position: "absolute", left: 3, top: 3, width: 13, height: 13, border: "3px solid #efefeb" }} />
+            <div style={{ position: "absolute", left: 16, top: 8, width: 14, height: 3, background: "#efefeb" }} />
+            <div style={{ position: "absolute", left: 27, top: 8, width: 3, height: 15, background: "#efefeb" }} />
+            <div style={{ position: "absolute", left: 23, top: 23, width: 14, height: 14, background: "#3ee08f" }} />
+            <div style={{ position: "absolute", left: 3, top: 31, width: 14, height: 3, background: "rgba(239,239,235,0.45)" }} />
+          </div>
           ALAUKIK / AUTOMATION ENGINEER
         </div>
 
@@ -49,7 +56,7 @@ export default function OpenGraphImage() {
                 <div style={{ width: 10, height: 10, border: "2px solid #3ee08f" }} />
                 {node}
               </div>
-              {i < path.length - 1 && <div style={{ width: 110, height: 2, background: "rgba(255,255,255,0.2)", margin: "0 18px" }} />}
+              {i < path.length - 1 && <div style={{ width: 74, height: 2, background: "rgba(255,255,255,0.2)", margin: "0 14px" }} />}
             </div>
           ))}
         </div>

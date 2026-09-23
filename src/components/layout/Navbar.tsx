@@ -110,9 +110,11 @@ export function Navbar() {
           >
             <Link href="/" className="group flex items-center gap-3 text-fg" aria-label={`${site.name} — home`}>
               <LogoMark size={scrolled ? 24 : 28} />
-              <span className="whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.12em] sm:text-xs">
-                <span className="font-semibold text-fg">{site.brand}</span>
-                <span className="hidden text-dim min-[420px]:inline"> / {site.role}</span>
+              <span className="flex items-baseline gap-2.5 whitespace-nowrap">
+                <span className="text-base font-semibold uppercase tracking-[-0.01em] text-fg sm:text-lg">{site.brand}</span>
+                <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-dim min-[420px]:inline">
+                  / {site.role}
+                </span>
               </span>
             </Link>
 
